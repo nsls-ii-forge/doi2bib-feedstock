@@ -25,11 +25,13 @@ requirements:
     - python >=3.6
     - bibtexparser
     - future
+    - requests
 
 test:
   imports:
     - doi2bib
   commands:
+    - doi2bib --help
     - doi2bib 10.1038/nature24270
 
 about:
