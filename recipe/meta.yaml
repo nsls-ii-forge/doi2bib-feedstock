@@ -1,6 +1,6 @@
 {% set name = "doi2bib" %}
-{% set version = "0.3.0" %}
-{% set sha256 = "94857e12d71727bd9bfc9e4667a31c68b159ba1de60fb8a2adf0905baca2827a" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "272458eb88a34ab0fd4c69c6a4f2698496ccd9791d827f52b6c2b3ae6a3a221c" %}
 
 package:
   name: {{ name|lower }}
