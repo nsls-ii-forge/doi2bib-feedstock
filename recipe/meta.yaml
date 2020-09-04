@@ -31,6 +31,7 @@ test:
   imports:
     - doi2bib
   commands:
+    - doi2bib --help
     - doi2bib 10.1038/nature24270
 
 about:
