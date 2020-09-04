@@ -1,0 +1,42 @@
+{% set name = "doi2bib" %}
+{% set version = "0.3.0" %}
+{% set sha256 = "94857e12d71727bd9bfc9e4667a31c68b159ba1de60fb8a2adf0905baca2827a" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  # TODO: use sources from PyPI. See https://github.com/bibcure/doi2bib/issues/7
+  # https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/bibcure/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >=3.6
+    - bibtexparser
+    - future
+
+test:
+  imports:
+    - doi2bib
+  commands:
+    - doi2bib 10.1038/nature24270
+
+about:
+  home: https://doi2bib.org
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: get the bibtex string given a doi
+  doc_url: https://doi2bib.readthedocs.io
+  dev_url: https://github.com/bibcure/doi2bib
